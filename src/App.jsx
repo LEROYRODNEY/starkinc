@@ -1,6 +1,7 @@
 import './index.css'
 import React, { useState, useEffect } from 'react'
-import { FaHome, FaEnvelope, FaShoppingCart, FaUser, FaStar, FaSearch } from 'react-icons/fa'
+import { FaHome, FaEnvelope, FaShoppingCart, FaStar, FaSearch } from 'react-icons/fa'
+
 
 function App() {
   const [products, setProducts] = useState({})
@@ -55,15 +56,26 @@ function App() {
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <FaHome className="mr-2" />
-            <a href="#" className="text-gray-800 text-xl font-bold">Home</a>
+            <a href="/" className="text-gray-800 text-xl font-bold">Home</a>
           </div>
           <div className="flex items-center">
             <a href="#" className="text-gray-800 mx-4"><FaEnvelope /></a>
             <button onClick={() => setShowCartDialog(true)} className="text-gray-800 mx-4"><FaShoppingCart /></button>
-            <a href="#" className="text-gray-800 mx-4"><FaUser /></a>
           </div>
         </div>
       </nav>
+      <h1 className='text-3xl p-4'>Starkinc</h1>
+      {/* Hero Section */}
+      <div className="relative bg-cover bg-center h-96" style={{backgroundImage: "url('/images/bg.webp')"}}>
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <div className="container mx-auto px-6 py-24 relative z-10">
+    <h2 className="text-4xl font-bold mb-2 text-white">Summer Collection</h2>
+    <h3 className="text-2xl mb-8 text-white">New arrivals are here</h3>
+    <button className="bg-white text-gray-800 font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-gray-200">
+      Shop Now
+    </button>
+  </div>
+</div>
 
       {/* Search Bar */}
       <div className="bg-white shadow-md">
@@ -79,19 +91,6 @@ function App() {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <div className="relative bg-cover bg-center h-96" style={{backgroundImage: "url('/images/bg.webp')"}}>
-  <div className="absolute inset-0 bg-black opacity-50"></div>
-  <div className="container mx-auto px-6 py-24 relative z-10">
-    <h2 className="text-4xl font-bold mb-2 text-white">Summer Collection</h2>
-    <h3 className="text-2xl mb-8 text-white">New arrivals are here</h3>
-    <button className="bg-white text-gray-800 font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-gray-200">
-      Shop Now
-    </button>
-  </div>
-</div>
-
-
       {/* Product Sections */}
       {Object.entries(products).map(([category, items]) => (
         <div key={category} className="container mx-auto px-6 py-8">
@@ -99,7 +98,7 @@ function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {items.map(product => (
               <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={`/${product.image}`} alt={product.name} className="w-full h-48 object-cover" />
+                <img src={`/images/${product.image}`} alt={product.name} className="w-full h-48 object-cover" />
                 <div className="p-4">
                   <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-2">{product.description}</p>
