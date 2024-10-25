@@ -1,38 +1,74 @@
 {
-    "shirts": [
-      {
-        "id": 1,
-        "name": "T-Shirt",
-        "description": "High-quality wireless headphones with noise-cancellation and long battery life.",
-        "price": 18.66,
-        "rating": 4.5,
-        "image": "black-shirt.jpg"
-      },
-      {
-      }
+  "shirts": [
+    {
+      "id": 1,
+      "name": "Classic T-Shirt",
+      "description": "A comfortable, everyday t-shirt made from soft cotton.",
+      "price": 18.66,
+      "rating": 4.5,
+      "image": "classic-tshirt.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Graphic T-Shirt",
+      "description": "Stylish t-shirt with a unique graphic print.",
+      "price": 22.50,
+      "rating": 4.7,
+      "image": "graphic-tshirt.jpg"
+    }
   ],
-    "shorts":[
-      {
-
-      },
-      {
-
-      }
+  "shorts": [
+    {
+      "id": 1,
+      "name": "Summer Short",
+      "description": "Nice male summer shorts for this season.",
+      "price": 8.99,
+      "rating": 4,
+      "image": "summer-short.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Cargo Short",
+      "description": "High-quality cotton cargo shorts with multiple pockets.",
+      "price": 12.99,
+      "rating": 4.3,
+      "image": "cargo-short.jpg"
+    }
   ],
-    "jeans":[
-      {
-
-      },
-      {
-        
-      }
-    ],
-    "hoodies":[
-      {
-
-      },
-      {
-
-      }
-    ]
-} 
+  "jeans": [
+    {
+      "id": 1,
+      "name": "Regular Fit Jeans",
+      "description": "Comfortable regular fit jeans that suit any casual occasion.",
+      "price": 24.99,
+      "rating": 4.3,
+      "image": "regular-fit-jeans.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Slim Fit Jeans",
+      "description": "Stylish slim fit jeans for a modern look.",
+      "price": 29.99,
+      "rating": 4.6,
+      "image": "slim-fit-jeans.jpg"
+    }
+  ],
+  "hoodies": [
+    {
+      "id": 1,
+      "name": "Basic Hoodie",
+      "description": "Soft and comfortable hoodie perfect for chilly days.",
+      "price": 19.99,
+      "rating": 4.2,
+      "image": "basic-hoodie.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Zip-Up Hoodie",
+      "description": "Warm zip-up hoodie with spacious pockets.",
+      "price": 22.99,
+      "rating": 4.5,
+      "image": "zip-up-hoodie.jpg"
+    }
+  ]
+}
