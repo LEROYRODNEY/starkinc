@@ -1,0 +1,30 @@
+{
+    "shirts": [
+      {
+        "id": 1,
+        "name": "T-Shirt",
+        "description": "High-quality wireless headphones with noise-cancellation and long battery life.",
+        "price": 18.66,
+        "rating": 4.5,
+        "image": "image-name and extention e.g black-shirt.jpg"
+      },
+      {
+      }
+  ],
+    "shorts":[
+      {
+
+      },
+      {
+
+      }
+  ],
+    "jeans":[
+      {
+
+      },
+      {
+        
+      }
+    ]
+} 
