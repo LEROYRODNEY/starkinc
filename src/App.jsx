@@ -1,10 +1,8 @@
-import { useState } from 'react'
-import './App.css'
+import './index.css'
 import React, { useState, useEffect } from 'react'
 import { FaHome, FaEnvelope, FaShoppingCart, FaUser, FaStar, FaSearch } from 'react-icons/fa'
-import productsData from './products.json'
-function App() {
 
+function App() {
   const [products, setProducts] = useState({})
   const [cart, setCart] = useState([])
   const [showQuantityDialog, setShowQuantityDialog] = useState(false)
@@ -14,7 +12,21 @@ function App() {
   const [quantity, setQuantity] = useState(1)
 
   useEffect(() => {
-    setProducts(productsData)
+          // Fetch the products.json file from the public directory
+          fetch('/products.json')
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data)
+            setProducts(data); // Assuming the JSON structure has a 'products' key
+          })
+          .catch((error) => {
+            console.error('Error fetching products:', error);
+          });
   }, [])
 
   const addToCart = (product) => {
@@ -68,15 +80,17 @@ function App() {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-cover bg-center h-96" style={{backgroundImage: "url('https://images.public.blob.vercel-storage.com/hero-image-ecommerce-YC2E8L4K1HCZF4yPL8SWdoJa.jpg')"}}>
-        <div className="container mx-auto px-6 py-24">
-          <h2 className="text-4xl font-bold mb-2 text-white">Summer Collection</h2>
-          <h3 className="text-2xl mb-8 text-white">New arrivals are here</h3>
-          <button className="bg-white text-gray-800 font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-gray-200">
-            Shop Now
-          </button>
-        </div>
-      </div>
+      <div className="relative bg-cover bg-center h-96" style={{backgroundImage: "url('/images/bg.webp')"}}>
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <div className="container mx-auto px-6 py-24 relative z-10">
+    <h2 className="text-4xl font-bold mb-2 text-white">Summer Collection</h2>
+    <h3 className="text-2xl mb-8 text-white">New arrivals are here</h3>
+    <button className="bg-white text-gray-800 font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-gray-200">
+      Shop Now
+    </button>
+  </div>
+</div>
+
 
       {/* Product Sections */}
       {Object.entries(products).map(([category, items]) => (
@@ -96,7 +110,7 @@ function App() {
                     <span className="ml-2 text-gray-600">{product.rating}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-bold">${product.price.toFixed(2)}</span>
+                    <span className="text-lg font-bold">${parseFloat(product.price).toFixed(2)}</span>
                     <button
                       onClick={() => addToCart(product)}
                       className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
