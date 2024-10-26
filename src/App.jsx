@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
           // Fetch the products.json file from the public directory
-          fetch('/products.json')
+          fetch('/starkinc/products.json')
           .then((response) => {
             if (!response.ok) {
               throw new Error('Network response was not ok');
@@ -66,7 +66,7 @@ function App() {
       </nav>
       <h1 className='text-3xl p-4'>Starkinc</h1>
       {/* Hero Section */}
-      <div className="relative bg-cover bg-center h-96" style={{backgroundImage: "url('/images/bg.webp')"}}>
+      <div className="relative bg-cover bg-center h-96" style={{backgroundImage: "url('/starkinc/images/bg.webp')"}}>
   <div className="absolute inset-0 bg-black opacity-50"></div>
   <div className="container mx-auto px-6 py-24 relative z-10">
     <h2 className="text-4xl font-bold mb-2 text-white">Summer Collection</h2>
